@@ -12,7 +12,7 @@
             <h4 class="card-header"> {{ laCategorie.libelle }} </h4>
             <div class="row">
                 <div class="col-2">
-                    <img class="avatar mx-auto my-3 " style="height: auto; max-width: 200px; display: block;" src="{{ laCategorie.image }}" alt="Card image">    
+                    <img class="avatar mx-auto my-3 " style="height: auto; max-width: 200px; display: block;" src="{{ asset(laCategorie.image) }}" alt="Card image">    
                 </div>
                 <div class="col d-flex-align-items-center">
                     <ul class="list-group list-group-flush">
@@ -26,8 +26,7 @@
             </div>
         </div>    
     </div>
-        <a href=" {{path('app_categories')}} " class="btn btn-success btn-block text-center">Revenir à la liste des contacts</a>
+        <a href=" {{path('app_categories')}} " class="btn btn-success btn-block text-center">Revenir la liste</a>
 </div>
 {% endblock %}  
 
-20 min

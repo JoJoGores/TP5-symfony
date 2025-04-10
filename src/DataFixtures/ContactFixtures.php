@@ -20,23 +20,23 @@ class ContactFixtures extends Fixture
         $categorie=new Categorie();
         $categorie->setlibelle("Professionel")
                     ->setDescription($faker->paragraph(5))
-                    ->setImage("https://picsum.photos/200/300");
+                    ->setImage("image/categorie/professionnel.jpg");
         $manager->persist($categorie);
-
-       
+        $categories[]= $categorie;
+        
         $categorie=new Categorie();
         $categorie->setlibelle("Sport")
                     ->setDescription($faker->paragraph(5))
-                    ->setImage("https://picsum.photos/200/300");
-       
+                    ->setImage("image/categorie/sport.jpg");
         $manager->persist($categorie);
-
+        $categories[]= $categorie;
+     
         $categorie=new Categorie();
         $categorie->setlibelle("Privé")
                     ->setDescription($faker->paragraph(5))
-                    ->setImage("https://picsum.photos/200/300");
+                    ->setImage("image/categorie/prive.jpg");
         $manager->persist($categorie);
-
+        $categories[]= $categorie;
 
 
         $genres=["male","female"];
@@ -56,6 +56,7 @@ class ContactFixtures extends Fixture
                     ->setVille($faker->city()) 
                     ->setMail($faker->email())
                     ->setSexe($sexe)
+                    ->setCategorie($categories[mt_rand(0,2)])
                     ->setAvatar("https://randomuser.me/api/portraits/" . $type. "/". $i.".jpg");
             $manager->persist($contact);
             
