@@ -23,8 +23,10 @@
                 {% else %}
                     <span class="badge badge-info">femme</span>
                 {% endif %}
-                <li class="list-group-item"><a href="{{path('ficheContact' , {'id' : leContact.categorie.id})}}"> {{leContact.categorie.libelle}}</li></a>
                     
+                </li>
+                <li class="list-group-item"> 
+                <a href="{{path('ficheCategorie' , {'id': leContact.categorie.id})}}"> {{ leContact.categorie.libelle }}</a>
                 </li>
                
             </ul>
